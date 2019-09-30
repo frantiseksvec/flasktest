@@ -1,0 +1,22 @@
+script
+<script src="https://www.chartjs.org/dist/2.8.0/Chart.min,js"></script>
+{% from "macros/fields.tmpl" import render_input_field, render_submit %}
+{% extends "shared/layout.tmpl" %}
+{% block title %}scitani {% endblock %}
+
+{% block content %}
+
+ <h1>Simple Line Chart</h1>
+<!-- bar chart canvas element -->
+<canvas id="myChart" width="600" height="400"></canvas>
+<p id="caption">The chart is displaying a simple line chart.</p>
+<script>
+
+    Chart.defaults.global.responice = false;
+
+    var charData = {
+        labels : [{%  for item in labels %}
+                    "{{ item }}"
+                    { % endfor %}],
+    }
+{% endblock %}
