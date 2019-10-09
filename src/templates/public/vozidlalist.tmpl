@@ -1,0 +1,14 @@
+{% from "macros/fields.tmpl" import render_input_field, render_submit %}
+{% extends "shared/layout.tmpl" %}
+
+{% block title %}LIST{% endblock %}
+
+{% block content %}
+ <table>
+    {% for n in data %}
+        <tr><td>{{ n.spz }}</td>
+       </tr>
+    {% endfor %}
+    </table>
+
+{% endblock %}
